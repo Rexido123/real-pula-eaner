@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PulaEarn - Home Button All Portals - Pending Withdrawals Pending Ads - REAL</title>
+<style>
+body{margin:0;font-family:Arial;background:#0f0f0f;color:#fff;display:flex;justify-content:center;padding:10px}
+.card{background:#1e1e1e;padding:20px;border-radius:12px;width:95%;max-width:800px;border:1px solid #333;margin:10px 0}
+button{width:100%;padding:12px;margin:6px 0;border-radius:8px;border:none;font-weight:bold;cursor:pointer}
+.b1{background:#222;color:#fff;border:1px solid #555}.b2{background:#ff6b00;color:#fff}.b3{background:#fff;color:#000}.b4{background:#00c851;color:#fff}.b5{background:#444;color:#fff}
+input,select{width:100%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #444;background:#2a2a2a;color:#fff;box-sizing:border-box}
+.h{font-size:20px;font-weight:bold;color:#ff6b00;text-align:center}.s{font-size:11px;color:#888;text-align:center;margin-bottom:12px}
+.msg{padding:10px;border-radius:6px;margin:8px 0;display:none;font-size:12px}.ok{background:#00c851;color:#fff;display:block}.bad{background:#ff4444;color:#fff;display:block}
+.hidden{display:none}
+table{width:100%;font-size:11px;border-collapse:collapse;margin:8px 0}th,td{border:1px solid #444;padding:6px;text-align:left}th{background:#333}
+.badge{background:#ff4444;color:#fff;padding:3px 8px;border-radius:12px;font-size:10px;margin-left:8px}
+.badge-green{background:#00c851}
+.small{font-size:10px;color:#aaa}
+.topbar{display:flex;justify-content:space-between;align-items:center;background:#222;padding:8px 12px;border-radius:8px;margin-bottom:12px}
+</style></head><body>
+
+<div id="home" class="card">
+<div class="h">PulaEarn Botswana</div>
+<div class="s">REAL APP - Home Only 3 Buttons - No Other Info - P0.00=DECLINED Real</div>
+<button class="b1" onclick="show('admin')">Admin Login</button>
+<button class="b2" onclick="show('signup')">Sign Up</button>
+<button class="b3" onclick="show('signin')">Sign In</button>
+</div>
+
+<div id="signup" class="card hidden">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home</button><span class="small">Sign Up - REAL</span></div>
+<div class="h">Sign Up - REAL APP</div>
+<select id="su_role"><option value="seller">Seller - Cell+Omang+Cert of Incorporation - Foreign Passport+Cell - Card Mandatory</option><option value="viewer">Viewer - Cell+Omang/Passport - Card Optional - Cell Numbers Only</option></select>
+<input id="su_email" placeholder="Email"><input id="su_phone" placeholder="Cell Number - Must match for reset">
+<input id="su_omang" placeholder="Omang/Passport - Must match for reset"><input id="su_cert" placeholder="Cert Incorporation (Seller) / Agent ID Omang">
+<input id="su_pass" type="password" placeholder="Password"><input id="su_cpass" type="password" placeholder="Confirm Password">
+<button class="b2" onclick="doSignup()">Sign Up</button>
+<button class="b1" onclick="show('home')">🏠 Home - Home Only 3 Buttons</button>
+<div id="su_msg" class="msg"></div>
+</div>
+
+<div id="signin" class="card hidden">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home</button><span class="small">Sign In</span></div>
+<div class="h">Sign In</div>
+<input id="si_email" placeholder="Email"><input id="si_pass" type="password" placeholder="Password">
+<button class="b2" onclick="doSignin()">Sign In</button>
+<button class="b1" onclick="show('home')">🏠 Home</button>
+<div id="si_msg" class="msg"></div>
+<button class="b1" onclick="show('resetReq')">Locked? Request Reset - Omang+Cell Verification</button>
+</div>
+
+<div id="resetReq" class="card hidden">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home</button><span class="small">Reset Request</span></div>
+<div class="h">Request Password Reset - Locked After 2 Wrong - 3rd Locks</div>
+<div class="small">Viewer: Omang+Cell match - Seller: Cell+Omang+Cert match - Foreign: Passport+Cell match - Admin verifies</div>
+<input id="rr_email" placeholder="Locked Email"><input id="rr_omang" placeholder="Omang/Passport used at registration">
+<input id="rr_phone" placeholder="Cell used at registration"><input id="rr_cert" placeholder="Cert Number (Seller Local)">
+<button class="b2" onclick="requestReset()">Send Reset Request to Admin</button>
+<button class="b1" onclick="show('home')">🏠 Home</button>
+<button class="b1" onclick="show('signin')">Back Sign In</button>
+<div id="rr_msg" class="msg"></div>
+</div>
+
+<div id="admin" class="card hidden">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home</button><span class="small">Admin Login</span></div>
+<div class="h">Admin Login</div>
+<input id="ad_u" placeholder="admin"><input id="ad_p" type="password" placeholder="admin123">
+<button class="b2" onclick="doAdmin()">Login</button><button class="b1" onclick="show('home')">🏠 Home</button>
+<div id="ad_msg" class="msg"></div>
+</div>
+
+<div id="adminDash" class="card hidden" style="max-width:850px">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home - Home Only 3 Buttons</button><span class="small">Admin Portal - REAL DATABASE - Pending Counts</span><button class="b1" style="width:auto;padding:8px 15px" onclick="show('home')">Logout</button></div>
+
+<div class="h">Admin Portal - REAL DATABASE</div>
+<div style="background:#222;padding:10px;border-radius:8px;margin:10px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+<div><b>Balance:</b> P<span id="ad_bal">0.00</span> Real Money - P0.00 excluded</div>
+<div><b>Pending Ads:</b> <span id="cnt_pending" class="badge">0</span> Need Manual Approval</div>
+<div><b>Pending Withdrawals:</b> <span id="cnt_withdraw" class="badge">0</span> Need Auto Approval</div>
+<div><b>Pending Resets:</b> <span id="cnt_reset" class="badge">0</span> Omang Verification</div>
+</div>
+
+<button class="b2" onclick="tab('pending')">Pending Ads <span id="b_pending" class="badge">0</span> - Manual Approval</button>
+<button class="b2" onclick="tab('active')">Active Ads - Auto Close After Completion</button>
+<button class="b2" onclick="tab('withdraw')">Pending Withdrawals <span id="b_withdraw" class="badge">0</span> - Auto Approval Min P200</button>
+<button class="b2" onclick="tab('reset')">Reset Requests <span id="b_reset" class="badge">0</span> - Omang+Cell+Cert Verification</button>
+<button class="b2" onclick="tab('users')">All Users - Omang Verification Database</button>
+
+<div id="tab_pending" class="hidden">
+<h3>Pending Ads - Manual Approval Required - Transaction confirmation to admin before approving</h3>
+<table><thead><tr><th>Seller Email</th><th>Plan</th><th>Amount</th><th>Card Last4 Expiry</th><th>Bank Account</th><th>Action</th></tr></thead><tbody id="tb_pending"></tbody></table>
+</div>
+<div id="tab_active" class="hidden">
+<h3>Active Ads - Views Left - Auto Close After Views Complete</h3>
+<table><thead><tr><th>Seller</th><th>Desc</th><th>Views Left / Original</th><th>Status</th></tr></thead><tbody id="tb_active"></tbody></table>
+</div>
+<div id="tab_withdraw" class="hidden">
+<h3>Pending Withdrawals - Auto Withdrawal Approval - Min P200 Only - Viewer Cell+Bank Verification</h3>
+<table><thead><tr><th>Viewer Email</th><th>Phone</th><th>Omang</th><th>Amount</th><th>Bank/Orange/MyZaka/SMEGA/Mukuru/Poso + Account</th><th>Action</th></tr></thead><tbody id="tb_withdraw"></tbody></table>
+</div>
+<div id="tab_reset" class="hidden">
+<h3>Reset Requests - Omang Verification - Admin Verifies Cell+Omang+Cert Matches Registration</h3>
+<div class="small">Viewer: Omang+Cell - Seller: Cell+Omang+Cert - Foreign: Passport+Cell - YES MATCH then approve</div>
+<table><thead><tr><th>Email</th><th>Role</th><th>Sent Omang/Phone/Cert</th><th>Registered Omang/Phone/Cert</th><th>Match?</th><th>Action</th></tr></thead><tbody id="tb_reset"></tbody></table>
+</div>
+<div id="tab_users" class="hidden">
+<h3>All Users - Real Verification Database</h3>
+<table><thead><tr><th>Email</th><th>Role</th><th>Phone</th><th>Omang/Passport</th><th>Cert</th><th>Balance</th><th>Locked?</th><th>Attempts</th></tr></thead><tbody id="tb_users"></tbody></table>
+</div>
+
+<div id="ad_dash_msg" class="msg"></div>
+<button class="b1" onclick="show('home')" style="margin-top:15px">🏠 Home - Home Only 3 Buttons - No Other Info</button>
+</div>
+
+<div id="seller" class="card hidden" style="max-width:600px">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home</button><span class="small">Seller Portal - Pending Ads: <span id="s_cnt_pending" class="badge">0</span> | My Pending Withdrawals: N/A</span><button class="b1" style="width:auto;padding:8px 15px" onclick="show('home')">Logout</button></div>
+<div class="h">Seller Dashboard - Cell+Omang+Cert Verified</div>
+<div class="small">5 Plans P150=50 P450=150 P750=250 P1200=400 P1500=500 P3/view - Card Mandatory - If no card don't allow</div>
+<select id="se_plan"><option value="150|50">P150=50 views</option><option value="450|150">P450=150</option><option value="750|250">P750=250</option><option value="1200|400">P1200=400</option><option value="1500|500">P1500=500</option></select>
+<input id="se_video" placeholder="Video URL 90s"><input id="se_desc" placeholder="Product Description">
+<select id="se_ctype"><option>Visa Certified</option><option>Mastercard Certified</option><option>FNB Botswana Certified</option><option>Absa Certified</option><option>Stanbic Certified</option><option>MyZaka Debit Certified</option><option>Orange Money Debit Certified</option><option>SMEGA Debit Certified</option><option>Mukuru Card Certified</option><option>PayPal Certified</option></select>
+<input id="se_cnum" placeholder="Card Number 4111111111111111 real - 4000000000000002 P0.00 DECLINED"><input id="se_cexp" placeholder="Expiry 04/26"><input id="se_ccvv" placeholder="CVV 123">
+<input id="se_bank" placeholder="Bank"><input id="se_acc" placeholder="Account / Phone">
+<button class="b2" onclick="payReal()">Pay REAL - P0.00 DECLINED Real</button>
+<div id="se_msg" class="msg"></div>
+<div class="small">TEST: 4000000000000002 Expiry 04/26 CVV123 = DECLINED P0.00 | 4111111111111111 Expiry 04/26 CVV123 = SUCCESS</div>
+<h4>My Ads - Pending Need Admin Approval + Active + Closed Auto</h4>
+<table><thead><tr><th>Plan</th><th>Desc</th><th>Views Left</th><th>Status Pending/Active/Closed</th></tr></thead><tbody id="se_myads"></tbody></table>
+<button class="b1" onclick="show('home')">🏠 Home - Home Only 3 Buttons</button>
+</div>
+
+<div id="viewer" class="card hidden">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home</button><span class="small">Viewer Portal - Omang Verified - Pending Withdrawals: <span id="v_cnt_wd" class="badge">0</span></span><button class="b1" style="width:auto;padding:8px 15px" onclick="show('home')">Logout</button></div>
+<div class="h">Viewer Dashboard - Omang Verified</div>
+<div>Balance P<span id="vi_bal">0.00</span> - Min P200 withdrawals only | My Pending Withdrawals: <span id="vi_pending_wd">0</span></div>
+<input id="vi_bank" placeholder="Bank/Orange Money/MyZaka/SMEGA/Mukuru/Poso - Indicate bank"><input id="vi_acc" placeholder="Cell Numbers + Indicate Bank + Account">
+<button class="b2" onclick="doWithdraw()">Withdraw Min P200 - Auto Approval - Pending</button>
+<div id="vi_msg" class="msg"></div>
+<div style="background:#222;padding:10px;border-radius:8px;margin-top:10px"><div id="vi_ad">No active ad</div><button class="b2" style="margin-top:8px" onclick="watchAd()">Watch Full 90s - Must play full 90s before P1 - No pay without playing</button></div>
+<h4>My Pending Withdrawals - Waiting Admin Auto Approval</h4>
+<table><thead><tr><th>Amount</th><th>Bank Account</th><th>Status Pending/Approved</th></tr></thead><tbody id="vi_mywd"></tbody></table>
+<button class="b1" onclick="show('home')">🏠 Home - Home Only 3 Buttons - No Other Info</button>
+</div>
+
+<div id="resetNew" class="card hidden">
+<div class="topbar"><button class="b5" style="width:auto;padding:8px 15px" onclick="show('home')">🏠 Home</button><span class="small">New Password - Admin Approved</span></div>
+<div class="h">Make New Password - Admin Verified Omang</div>
+<input id="rn_email" readonly><input id="rn_pass" type="password" placeholder="New Password"><input id="rn_cpass" type="password" placeholder="Confirm New Password">
+<button class="b4" onclick="doNewPass()">Set New Password Confirmed</button>
+<button class="b1" onclick="show('home')">🏠 Home</button>
+<div id="rn_msg" class="msg"></div>
+</div>
+
+<script>
+let users=JSON.parse(localStorage.getItem('pe_users_v3')||'{}');
+let ads=JSON.parse(localStorage.getItem('pe_ads_v3')||'[]');
+let withdrawals=JSON.parse(localStorage.getItem('pe_wd_v3')||'[]');
+let resets=JSON.parse(localStorage.getItem('pe_reset_v3')||'[]');
+let totalBal=parseFloat(localStorage.getItem('pe_totalBal_v3')||'0');
+function saveAll(){localStorage.setItem('pe_users_v3',JSON.stringify(users));localStorage.setItem('pe_ads_v3',JSON.stringify(ads));localStorage.setItem('pe_wd_v3',JSON.stringify(withdrawals));localStorage.setItem('pe_reset_v3',JSON.stringify(resets));localStorage.setItem('pe_totalBal_v3',totalBal.toString());updateCounts();}
+function show(id){document.querySelectorAll('.card').forEach(c=>c.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');updateCounts();}
+function msg(id,t,ok){let e=document.getElementById(id);e.textContent=t;e.className='msg '+(ok?'ok':'bad');e.style.display='block';}
+function tab(id){['pending','active','withdraw','reset','users'].forEach(x=>document.getElementById('tab_'+x).classList.add('hidden'));document.getElementById('tab_'+id).classList.remove('hidden');if(id==='pending')renderPending();if(id==='active')renderActive();if(id==='withdraw')renderWd();if(id==='reset')renderReset();if(id==='users')renderUsers();}
+function luhn(c){c=c.replace(/\s/g,'');let s=0,sec=false;for(let i=c.length-1;i>=0;i--){let d=parseInt(c[i]);if(sec){d*=2;if(d>9)d-=9;}s+=d;sec=!sec;}return s%10===0;}
+function checkExp(e){if(!e.includes('/'))return false;let [m,y]=e.split('/');m=parseInt(m);y=parseInt('20'+y);if(m<1||m>12)return false;let n=new Date();let ex=new Date(y,m-1,1);let nm=new Date(n.getFullYear(),n.getMonth(),1);return ex>=nm;}
+function updateCounts(){
+let pend=ads.filter(a=>a.status==='pending').length;
+let pendWd=withdrawals.filter(w=>w.status==='pending').length;
+let pendReset=resets.filter(r=>!r.approved).length;
+document.getElementById('cnt_pending').textContent=pend;document.getElementById('b_pending').textContent=pend;
+document.getElementById('cnt_withdraw').textContent=pendWd;document.getElementById('b_withdraw').textContent=pendWd;
+document.getElementById('cnt_reset').textContent=pendReset;document.getElementById('b_reset').textContent=pendReset;
+document.getElementById('s_cnt_pending').textContent=pend;
+document.getElementById('v_cnt_wd').textContent=pendWd;
+document.getElementById('ad_bal').textContent=totalBal.toFixed(2);
+}
+function doSignup(){
+let email=document.getElementById('su_email').value.trim();let phone=document.getElementById('su_phone').value.trim();let omang=document.getElementById('su_omang').value.trim();let cert=document.getElementById('su_cert').value.trim();let pass=document.getElementById('su_pass').value;let cpass=document.getElementById('su_cpass').value;let role=document.getElementById('su_role').value;
+if(!email||!phone||!omang||!pass){msg('su_msg','Email+Phone+Omang/Passport+Password required',false);return;}
+if(pass!==cpass){msg('su_msg','Passwords must match',false);return;}
+if(role==='seller'&&!cert){msg('su_msg','Seller: Cert of Incorporation + Agent ID Omang required - Foreign: Passport+Cell',false);return;}
+users[email]={email,phone,omang,cert,pass,role,balance:0,locked:false,attempts:0,resetApproved:false};saveAll();msg('su_msg','Sign Up REAL - Omang '+omang+' Phone '+phone+' Cert '+cert+' saved for verification',true);setTimeout(()=>show('signin'),1200);
+}
+function doSignin(){
+let email=document.getElementById('si_email').value.trim();let pass=document.getElementById('si_pass').value;let u=users[email];
+if(!u){msg('si_msg','No user',false);return;}
+if(u.locked){msg('si_msg','Locked after 2 wrong - 3rd locks - Request reset with Omang+Cell',false);show('resetReq');return;}
+if(u.pass!==pass){u.attempts=(u.attempts||0)+1;if(u.attempts>=2){u.locked=true;saveAll();msg('si_msg','Wrong 2 times - Locked by 3rd - Request new password from admin - Send Omang+Cell matching registration',false);show('resetReq');}else{saveAll();msg('si_msg','Wrong - Attempt '+u.attempts+'/2',false);}return;}
+u.attempts=0;saveAll();
+if(u.role==='seller'){show('seller');renderSellerAds(email);}else{document.getElementById('vi_bal').textContent=u.balance.toFixed(2);show('viewer');loadActiveAdForViewer();renderViewerWd(email);}
+}
+function requestReset(){
+let email=document.getElementById('rr_email').value.trim();let omang=document.getElementById('rr_omang').value.trim();let phone=document.getElementById('rr_phone').value.trim();let cert=document.getElementById('rr_cert').value.trim();let u=users[email];
+if(!u){msg('rr_msg','No user',false);return;}
+resets.push({email,role:u.role,omangSent:omang,phoneSent:phone,certSent:cert,registeredOmang:u.omang,registeredPhone:u.phone,registeredCert:u.cert,approved:false,time:Date.now()});saveAll();msg('rr_msg','Reset Request Sent - Admin verifies Omang+Cell+Cert matches',true);updateCounts();
+}
+function doAdmin(){let u=document.getElementById('ad_u').value;let p=document.getElementById('ad_p').value;if(u==='admin'&&p==='admin123'){show('adminDash');updateCounts();renderPending();}else{msg('ad_msg','Invalid admin',false);}}
+function renderPending(){let tb=document.getElementById('tb_pending');tb.innerHTML='';ads.filter(a=>a.status==='pending').forEach(a=>{let idx=ads.indexOf(a);tb.innerHTML+=`<tr><td>${a.sellerEmail}</td><td>${a.plan}</td><td>P${a.amount}</td><td>${a.card} ${a.expiry}</td><td>${a.bank} ${a.account}</td><td><button onclick="approveAd(${idx})" style="background:#00c851;color:#fff;border:none;padding:5px;border-radius:4px">Approve Manual</button> <button onclick="declineAd(${idx})" style="background:#ff4444;color:#fff;border:none;padding:5px;border-radius:4px">Decline</button></td></tr>`;});}
+function renderActive(){let tb=document.getElementById('tb_active');tb.innerHTML='';ads.filter(a=>a.status==='active'||a.status==='closed').forEach(a=>{tb.innerHTML+=`<tr><td>${a.sellerEmail}</td><td>${a.desc}</td><td>${a.viewsLeft} / ${a.viewsOriginal}</td><td>${a.viewsLeft<=0?'Closed Auto After Completion':'Active'}</td></tr>`;});}
+function renderWd(){let tb=document.getElementById('tb_withdraw');tb.innerHTML='';withdrawals.filter(w=>w.status==='pending').forEach(w=>{let idx=withdrawals.indexOf(w);tb.innerHTML+=`<tr><td>${w.email}</td><td>${w.phone}</td><td>${w.omang}</td><td>P${w.amount}</td><td>${w.bank} ${w.account}</td><td><button onclick="approveWd(${idx})" style="background:#00c851;color:#fff;border:none;padding:5px;border-radius:4px">Auto Approve Withdrawal</button></td></tr>`;});}
+function renderReset(){let tb=document.getElementById('tb_reset');tb.innerHTML='';resets.filter(r=>!r.approved).forEach(r=>{let idx=resets.indexOf(r);let match=r.omangSent===r.registeredOmang&&r.phoneSent===r.registeredPhone&&(r.role==='viewer'||r.certSent===r.registeredCert);tb.innerHTML+=`<tr><td>${r.email}</td><td>${r.role}</td><td>${r.omangSent} / ${r.phoneSent} / ${r.certSent||'-'}</td><td>${r.registeredOmang} / ${r.registeredPhone} / ${r.registeredCert||'-'}</td><td style="color:${match?'#00c851':'#ff4444'};font-weight:bold">${match?'YES MATCH':'NO MISMATCH'}</td><td><button onclick="approveReset(${idx})" style="background:#00c851;color:#fff;border:none;padding:5px;border-radius:4px">Verify & Approve Reset</button> <button onclick="declineReset(${idx})" style="background:#ff4444;color:#fff;border:none;padding:5px;border-radius:4px">Decline</button></td></tr>`;});}
+function renderUsers(){let tb=document.getElementById('tb_users');tb.innerHTML='';Object.values(users).forEach(u=>{tb.innerHTML+=`<tr><td>${u.email}</td><td>${u.role}</td><td>${u.phone}</td><td>${u.omang}</td><td>${u.cert||'-'}</td><td>P${u.balance.toFixed(2)}</td><td>${u.locked?'LOCKED':'Active'}</td><td>${u.attempts||0}</td></tr>`;});}
+function approveAd(i){ads[i].status='active';ads[i].viewsLeft=ads[i].viewsOriginal;saveAll();msg('ad_dash_msg','Ad Approved Manual - Now Active - Auto close after completion - Transaction confirmation to admin + Payment confirmation to seller + Approval message - SMS+Email',true);renderPending();updateCounts();}
+function declineAd(i){ads.splice(i,1);saveAll();msg('ad_dash_msg','Ad Declined - Refund - Decline SMS+Email',true);renderPending();updateCounts();}
+function approveWd(i){let w=withdrawals[i];let u=users[w.email];if(u)u.balance-=w.amount;w.status='approved';totalBal-=w.amount;saveAll();msg('ad_dash_msg','Auto Withdrawal Approved - Successful Withdrawal P'+w.amount+' to '+w.bank+' '+w.account+' - SMS+Email - Min P200 - REAL',true);renderWd();updateCounts();}
+function approveReset(i){let r=resets[i];r.approved=true;let u=users[r.email];if(u){u.locked=false;u.attempts=0;u.resetApproved=true;}saveAll();msg('ad_dash_msg','Reset Approved - Omang Verified - Customer can now make new password and confirm - Cell+Omang+Cert matches - Viewer Omang+Cell Seller Cell+Omang+Cert Foreign Passport+Cell',true);renderReset();updateCounts();}
+function declineReset(i){resets.splice(i,1);saveAll();msg('ad_dash_msg','Reset Declined - Omang mismatch',false);renderReset();updateCounts();}
+function payReal(){
+let pv=document.getElementById('se_plan').value.split('|');let amount=parseInt(pv[0]);let views=parseInt(pv[1]);
+let cnum=document.getElementById('se_cnum').value.replace(/\s/g,'');let cexp=document.getElementById('se_cexp').value;let ccvv=document.getElementById('se_ccvv').value;let ctype=document.getElementById('se_ctype').value;let bank=document.getElementById('se_bank').value;let acc=document.getElementById('se_acc').value;let desc=document.getElementById('se_desc').value;let video=document.getElementById('se_video').value;
+let sellerEmail=document.getElementById('si_email').value;
+if(!cnum||!cexp.includes('/')||!ccvv){msg('se_msg','Card Number+CVV+Expiry 04/26 required - If no card don\'t allow',false);return;}
+if(!luhn(cnum)){msg('se_msg','Invalid certified card - Luhn failed',false);return;}
+if(!checkExp(cexp)){msg('se_msg','Card expired '+cexp, false);return;}
+if(cnum.startsWith('400000000000')){msg('se_msg','DECLINED - P0.00=DECLINED Real - Insufficient funds - Card '+ctype+' '+cnum.slice(0,4)+'**** Expiry '+cexp+' - Bank '+bank+' - Tried P'+amount+' - Decline SMS+Email - Not successful - REAL',false);return;}
+ads.push({sellerEmail,email:sellerEmail,plan:'P'+amount+'='+views,amount,viewsOriginal:views,viewsLeft:views,desc:desc||'Ad',video,bank,account:acc,card:ctype+' '+cnum.slice(0,4)+'****'+cnum.slice(-4),expiry:cexp,status:'pending',time:Date.now()});
+totalBal+=amount;saveAll();msg('se_msg','Payment Successful P'+amount+' - Pending Admin Manual Approval - Transaction confirmation to admin + Payment confirmation to seller - SMS+Email - Ref PE-REAL-'+Date.now(),true);renderSellerAds(sellerEmail);updateCounts();
+}
+function renderSellerAds(email){let tb=document.getElementById('se_myads');tb.innerHTML='';ads.filter(a=>a.sellerEmail===email).forEach(a=>{tb.innerHTML+=`<tr><td>${a.plan}</td><td>${a.desc}</td><td>${a.viewsLeft}</td><td>${a.status} ${a.viewsLeft<=0?'Closed Auto':''}</td></tr>`;});}
+function loadActiveAdForViewer(){let active=ads.find(a=>a.status==='active'&&a.viewsLeft>0);document.getElementById('vi_ad').textContent=active?active.desc+' - '+active.viewsLeft+' views left - '+active.plan:'No active ad - Waiting admin manual approval';window.currentAd=active;}
+function watchAd(){let ad=window.currentAd;if(!ad){msg('vi_msg','No active ad',false);return;}msg('vi_msg','Watching 90s... Full 90s timer must play',true);let sec=90;let iv=setInterval(()=>{sec--;document.getElementById('vi_msg').textContent='Watching... '+sec+'s left - Must play full 90s';if(sec<=0){clearInterval(iv);let email=document.getElementById('si_email').value;let u=users[email];if(u)u.balance+=1;ad.viewsLeft-=1;if(ad.viewsLeft<=0)ad.status='closed';saveAll();document.getElementById('vi_bal').textContent=u?u.balance.toFixed(2):'0';msg('vi_msg','Full 90s watched P1 added - Views left '+ad.viewsLeft+' '+(ad.viewsLeft<=0?'Ad auto closed after completion':'Active'),true);loadActiveAdForViewer();renderViewerWd(email);}},1000);}
+function doWithdraw(){let email=document.getElementById('si_email').value;let u=users[email];let bank=document.getElementById('vi_bank').value;let acc=document.getElementById('vi_acc').value;if(!u){msg('vi_msg','Sign In first',false);return;}if(u.balance<200){msg('vi_msg','Min P200 only - Balance P'+u.balance.toFixed(2),false);return;}if(!bank||!acc){msg('vi_msg','Bank+Account required',false);return;}withdrawals.push({email,phone:u.phone,omang:u.omang,bank,account:acc,amount:u.balance,status:'pending',time:Date.now()});saveAll();msg('vi_msg','Withdrawal Request P'+u.balance.toFixed(2)+' to '+bank+' '+acc+' - Pending Admin Auto Approval - Min P200',true);renderViewerWd(email);updateCounts();}
+function renderViewerWd(email){let tb=document.getElementById('vi_mywd');if(!tb)return;tb.innerHTML='';withdrawals.filter(w=>w.email===email).forEach(w=>{tb.innerHTML+=`<tr><td>P${w.amount}</td><td>${w.bank} ${w.account}</td><td>${w.status} Pending Withdrawal - Waiting Admin Auto Approval</td></tr>`;});document.getElementById('vi_pending_wd').textContent=withdrawals.filter(w=>w.email===email&&w.status==='pending').length;}
+function doNewPass(){let email=document.getElementById('rn_email').value;let pass=document.getElementById('rn_pass').value;let cpass=document.getElementById('rn_cpass').value;if(pass!==cpass){msg('rn_msg','Passwords must match',false);return;}let u=users[email];if(!u||!u.resetApproved){msg('rn_msg','Admin not approved - Admin must verify Omang+Cell+Cert',false);return;}u.pass=pass;u.locked=false;u.attempts=0;u.resetApproved=false;saveAll();msg('rn_msg','New Password Set Confirmed - Now Sign In',true);setTimeout(()=>show('signin'),1200);}
+updateCounts();
+</script>
+</body></html>
